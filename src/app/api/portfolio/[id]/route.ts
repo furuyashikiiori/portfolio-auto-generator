@@ -31,7 +31,7 @@ export async function GET(
         const fileContent = await readFile(dataFile, 'utf-8');
         const fileData = JSON.parse(fileContent);
         return NextResponse.json(fileData);
-      } catch (fileError) {
+      } catch {
         // ファイル読み取り失敗は無視
       }
     }

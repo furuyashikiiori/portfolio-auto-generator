@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
     const portfolioId = uuidv4();
     
     // メモリストレージに保存（本番環境での一時的な解決策）
-    const savedData = savePortfolio(portfolioId, portfolioData);
+    savePortfolio(portfolioId, portfolioData);
     
     // 従来のファイル保存も維持（開発環境用）
     if (process.env.NODE_ENV !== 'production') {
