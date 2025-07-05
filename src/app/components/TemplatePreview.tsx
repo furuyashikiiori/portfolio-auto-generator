@@ -130,75 +130,83 @@ const TemplatePreview: React.FC<TemplatePreviewProps> = ({
       switch (templateId) {
         case "simple":
           return {
-            container: "p-6 rounded-lg shadow-sm",
-            header: "border-b border-gray-200 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center",
-            name: "text-2xl font-light text-gray-900",
-            title: "text-gray-600 font-normal",
-            skillBadge: "px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm font-medium"
+            container: "p-6 rounded-lg shadow-sm bg-white border border-gray-200",
+            header: "border-b border-gray-200 pb-4 text-center",
+            avatar: "w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4",
+            name: "text-2xl font-light text-gray-900 mb-2",
+            title: "text-gray-600 font-normal text-lg mb-2",
+            university: "text-gray-500 text-sm",
+            skillBadge: "px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm font-medium"
           };
         case "yuttari":
           return {
-            container: "p-8 rounded-xl shadow-sm",
-            header: "border-b border-stone-200 pb-6 mb-6",
-            avatar: "w-20 h-20 rounded-full bg-stone-200 flex items-center justify-center",
-            name: "text-2xl font-light text-stone-800 mb-2",
-            title: "text-stone-600 font-light text-lg",
-            skillBadge: "px-4 py-2 bg-stone-100 text-stone-700 rounded-full text-sm"
+            container: "p-8 rounded-3xl shadow-lg bg-white/80 backdrop-blur-sm border border-amber-200",
+            header: "text-center mb-8",
+            avatar: "w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6",
+            name: "text-3xl font-serif text-amber-900 mb-4",
+            title: "text-amber-700 font-light text-xl mb-4",
+            university: "text-amber-600 text-lg",
+            skillBadge: "px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium border border-amber-300"
           };
         case "neon":
           return {
-            container: "p-6 rounded-lg shadow-[0_0_30px_rgba(34,211,238,0.2)]",
-            header: "border-b border-cyan-400/30 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-cyan-400/20 flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.3)]",
-            name: "text-2xl font-bold text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]",
-            title: "text-cyan-400 font-medium",
-            skillBadge: "px-3 py-1 bg-cyan-400/20 text-cyan-300 rounded-full text-sm border border-cyan-400/30 shadow-[0_0_10px_rgba(34,211,238,0.3)]"
+            container: "p-6 rounded-lg shadow-2xl bg-gray-900 border-2 border-cyan-400",
+            header: "text-center mb-8",
+            avatar: "w-16 h-16 rounded-full bg-cyan-400/20 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-400/50",
+            name: "text-2xl font-bold text-cyan-400 mb-2",
+            title: "text-pink-400 font-medium text-lg mb-2",
+            university: "text-cyan-300 text-sm",
+            skillBadge: "px-3 py-1 bg-gray-700 text-cyan-300 rounded text-sm border border-cyan-500"
           };
         case "cool":
           return {
-            container: "p-6 rounded-lg shadow-lg",
-            header: "border-b border-slate-700 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-slate-700 flex items-center justify-center",
-            name: "text-2xl font-semibold text-slate-100",
-            title: "text-slate-300 font-medium",
-            skillBadge: "px-3 py-1 bg-slate-700 text-slate-200 rounded text-sm border border-slate-600"
-          };
-        case "koukyuu":
-          return {
-            container: "p-8 rounded-xl shadow-2xl",
-            header: "border-b border-white/20 pb-6",
-            avatar: "w-20 h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm",
-            name: "text-3xl font-serif text-white mb-2",
-            title: "text-white/90 font-light text-lg",
-            skillBadge: "px-4 py-2 bg-white/20 text-white rounded-full text-sm backdrop-blur-sm border border-white/30"
-          };
-        case "clear":
-          return {
-            container: "p-6 rounded-xl shadow-lg backdrop-blur-md",
-            header: "border-b border-blue-200/50 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-white/50 flex items-center justify-center backdrop-blur-sm",
-            name: "text-2xl font-medium text-blue-900",
-            title: "text-blue-700 font-light",
-            skillBadge: "px-3 py-1 bg-white/50 text-blue-800 rounded-full text-sm backdrop-blur-sm"
+            container: "p-8 rounded-xl shadow-2xl bg-gray-800/50 backdrop-blur-lg border border-gray-700",
+            header: "text-center mb-12 relative",
+            avatar: "w-16 h-16 rounded-full bg-slate-700 flex items-center justify-center mx-auto mb-6",
+            name: "text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2",
+            title: "text-gray-300 font-medium text-xl mb-2",
+            university: "text-gray-400 text-lg",
+            skillBadge: "px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium"
           };
         case "techblue":
           return {
-            container: "p-6 rounded-lg shadow-lg",
-            header: "border-b border-blue-700 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-blue-700 flex items-center justify-center",
-            name: "text-2xl font-mono text-blue-100 font-bold",
-            title: "text-blue-200 font-mono",
-            skillBadge: "px-3 py-1 bg-blue-800 text-blue-100 rounded text-sm font-mono border border-blue-600"
+            container: "p-8 rounded-lg shadow-xl bg-slate-800 border border-slate-700",
+            header: "text-center mb-8 bg-gradient-to-r from-blue-600 to-blue-800 p-6 rounded-lg",
+            avatar: "w-16 h-16 rounded-full bg-blue-700 flex items-center justify-center mx-auto mb-4",
+            name: "text-2xl font-bold text-white mb-2",
+            title: "text-blue-200 font-medium text-lg mb-2",
+            university: "text-blue-200 text-sm",
+            skillBadge: "px-3 py-1 bg-blue-600 text-blue-100 rounded text-sm font-mono"
           };
         case "animal":
           return {
-            container: "p-6 rounded-2xl shadow-lg",
-            header: "border-b border-green-200 pb-4",
-            avatar: "w-16 h-16 rounded-full bg-green-200 flex items-center justify-center",
-            name: "text-2xl font-bold text-green-800",
-            title: "text-green-700 font-medium",
-            skillBadge: "px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm font-medium"
+            container: "p-8 rounded-3xl shadow-lg bg-white/90 backdrop-blur-sm border-4 border-green-200",
+            header: "text-center mb-12 relative",
+            avatar: "w-20 h-20 rounded-full bg-green-200 flex items-center justify-center mx-auto mb-6 border-4 border-green-300",
+            name: "text-3xl font-bold text-green-800 mb-4",
+            title: "text-green-700 font-medium text-xl mb-4",
+            university: "text-green-600 text-lg",
+            skillBadge: "px-4 py-2 bg-green-200 text-green-800 rounded-full text-sm font-bold border-2 border-green-300"
+          };
+        case "koukyuu":
+          return {
+            container: "p-12 rounded-3xl shadow-2xl bg-white/10 backdrop-blur-lg border border-white/20",
+            header: "text-center mb-16 relative",
+            avatar: "w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-8 border-4 border-white/30",
+            name: "text-4xl font-serif text-white mb-6 tracking-wider",
+            title: "text-white/90 font-light text-2xl mb-6 italic",
+            university: "text-white/80 text-xl",
+            skillBadge: "px-6 py-3 bg-gradient-to-r from-yellow-400/20 to-purple-400/20 text-white rounded-full text-sm font-medium border border-white/30"
+          };
+        case "clear":
+          return {
+            container: "p-10 rounded-3xl shadow-xl bg-white/60 backdrop-blur-md border border-white/50",
+            header: "text-center mb-16 relative",
+            avatar: "w-16 h-16 rounded-full bg-white/80 flex items-center justify-center mx-auto mb-6 border-4 border-white/80",
+            name: "text-4xl font-light text-blue-900 mb-6 tracking-wide",
+            title: "text-blue-700 font-light text-2xl mb-6",
+            university: "text-blue-600 text-lg",
+            skillBadge: "px-4 py-2 bg-white/50 text-blue-800 rounded-full text-sm font-light border border-white/60"
           };
         default:
           return {
@@ -207,6 +215,7 @@ const TemplatePreview: React.FC<TemplatePreviewProps> = ({
             avatar: "w-16 h-16 rounded-full bg-current/20 flex items-center justify-center",
             name: "text-2xl font-bold",
             title: "opacity-80",
+            university: "opacity-70 text-sm",
             skillBadge: "px-3 py-1 bg-current/20 rounded-full text-sm"
           };
       }
@@ -229,70 +238,212 @@ const TemplatePreview: React.FC<TemplatePreviewProps> = ({
     
     const iconUrl = iconImage ? URL.createObjectURL(iconImage) : null;
     
+    // Get template background and text styles
+    const getTemplateColorScheme = (templateId: string) => {
+      switch (templateId) {
+        case "simple":
+          return { background: '#ffffff', color: '#111827' };
+        case "yuttari":
+          return { background: 'linear-gradient(to bottom right, #fffbeb, #fff7ed, #fef2f2)', color: '#92400e' };
+        case "neon":
+          return { background: '#000000', color: '#ffffff' };
+        case "cool":
+          return { background: 'linear-gradient(to bottom right, #0f172a, #111827, #000000)', color: '#ffffff' };
+        case "techblue":
+          return { background: '#0f172a', color: '#ffffff' };
+        case "animal":
+          return { background: 'linear-gradient(to bottom right, #dcfce7, #d1fae5, #ccfbf1)', color: '#065f46' };
+        case "koukyuu":
+          return { background: 'linear-gradient(to bottom right, #581c87, #312e81, #1e3a8a)', color: '#ffffff' };
+        case "clear":
+          return { background: 'linear-gradient(to bottom right, #eff6ff, #ecfeff)', color: '#1e40af' };
+        default:
+          return { background: '#ffffff', color: '#000000' };
+      }
+    };
+    
+    const colorScheme = getTemplateColorScheme(template.id);
+    
     return (
-      <div className={`${styles.container} ${template.colorScheme} min-h-96`}>
-        <div className="space-y-4">
+      <div className={`${styles.container} min-h-96`} style={colorScheme}>
+        <div className="space-y-6">
           {/* Header */}
           <div className={styles.header}>
-            <div className="flex items-center space-x-4">
-              <div className={styles.avatar}>
-                {iconUrl ? (
-                  <img 
-                    src={iconUrl} 
-                    alt="アイコン" 
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                ) : (
-                  <span className="text-xl">
-                    {template.id === "animal" ? "🐱" : "👤"}
-                  </span>
-                )}
-              </div>
-              <div>
-                <h2 className={styles.name}>{displayName}</h2>
-                {displayTitle && <p className={styles.title}>{displayTitle}</p>}
-                {displayUniversity && (
-                  <p className={`text-sm ${template.id === "neon" ? "text-cyan-400/80" : "opacity-70"}`}>
-                    {displayUniversity} {displayYear}
-                  </p>
-                )}
-              </div>
+            <div className={styles.avatar}>
+              {iconUrl ? (
+                <img 
+                  src={iconUrl} 
+                  alt="アイコン" 
+                  className="w-full h-full rounded-full object-cover"
+                />
+              ) : (
+                <span className="text-xl">
+                  {template.id === "animal" ? "🐱" : "👤"}
+                </span>
+              )}
+            </div>
+            <div>
+              <h2 className={styles.name}>
+                {template.id === "animal" && "🌿 "}
+                {template.id === "koukyuu" && <span className="relative z-10">{displayName}</span>}
+                {template.id !== "koukyuu" && displayName}
+                {template.id === "animal" && " 🌿"}
+              </h2>
+              {displayTitle && (
+                <p className={styles.title}>
+                  {template.id === "animal" && "🍃 "}
+                  {displayTitle}
+                  {template.id === "animal" && " 🍃"}
+                </p>
+              )}
+              {displayUniversity && (
+                <p className={styles.university}>
+                  {template.id === "animal" && "🏫 "}{displayUniversity} {displayYear}
+                </p>
+              )}
             </div>
           </div>
 
           {/* About */}
-          <div className={template.id === "yuttari" ? "space-y-3" : "space-y-2"}>
-            <h3 className="text-lg font-semibold mb-2">自己紹介</h3>
-            <p className={`text-sm ${template.id === "yuttari" ? "leading-relaxed" : "opacity-80"}`}>
-              {displaySelfIntro}
-            </p>
+          <div className="space-y-3">
+            <h3 className={`text-lg font-semibold ${
+              template.id === "animal" ? "flex items-center gap-2" :
+              template.id === "koukyuu" ? "text-white text-center" :
+              template.id === "clear" ? "text-blue-900 text-center" :
+              ""
+            }`}>
+              {template.id === "animal" && "🌺"}
+              {template.id === "koukyuu" && <span className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">自己紹介</span>}
+              {template.id === "clear" && <span className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3">自己紹介</span>}
+              {!template.id.match(/animal|koukyuu|clear/) && "自己紹介"}
+              {template.id === "animal" && " 🌺"}
+            </h3>
+            <div className={`p-4 rounded-lg ${
+              template.id === "simple" ? "bg-gray-50" :
+              template.id === "yuttari" ? "bg-white/60 rounded-3xl" :
+              template.id === "neon" ? "bg-gray-800 border border-cyan-400" :
+              template.id === "cool" ? "bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-xl" :
+              template.id === "techblue" ? "bg-slate-800 border-l-4 border-blue-500" :
+              template.id === "animal" ? "bg-white/80 border-4 border-green-200 rounded-3xl relative" :
+              template.id === "koukyuu" ? "bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 relative overflow-hidden" :
+              template.id === "clear" ? "bg-white/60 backdrop-blur-md rounded-3xl border border-white/50 relative overflow-hidden" :
+              "bg-gray-50"
+            }`}>
+              {template.id === "animal" && (
+                <>
+                  <div className="absolute -top-2 left-4"><span className="text-xl">🦋</span></div>
+                  <div className="absolute -bottom-2 right-4"><span className="text-xl">🐝</span></div>
+                </>
+              )}
+              {template.id === "koukyuu" && (
+                <>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400"></div>
+                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
+                </>
+              )}
+              {template.id === "clear" && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-cyan-100/30 pointer-events-none"></div>
+                  <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-blue-300/20 to-cyan-300/20 rounded-full blur-xl"></div>
+                </>
+              )}
+              <p className={`text-sm ${
+                template.id === "yuttari" ? "leading-relaxed text-center font-light" :
+                template.id === "neon" ? "text-gray-100" :
+                template.id === "cool" ? "text-gray-100" :
+                template.id === "techblue" ? "text-gray-300" :
+                template.id === "animal" ? "text-center font-medium" :
+                template.id === "koukyuu" ? "text-white leading-loose text-center font-light relative z-10" :
+                template.id === "clear" ? "text-blue-800 leading-loose text-center font-light relative z-10" :
+                "opacity-80"
+              }`}>
+                {displaySelfIntro}
+              </p>
+            </div>
           </div>
 
           {/* Skills */}
-          <div className={template.id === "yuttari" ? "space-y-3" : "space-y-2"}>
-            <h3 className="text-lg font-semibold mb-2">スキル</h3>
-            <div className={`flex flex-wrap ${template.id === "yuttari" ? "gap-3" : "gap-2"}`}>
+          <div className="space-y-3">
+            <h3 className={`text-lg font-semibold ${
+              template.id === "animal" ? "flex items-center gap-2" :
+              template.id === "koukyuu" ? "text-white text-center" :
+              template.id === "clear" ? "text-blue-900 text-center" :
+              ""
+            }`}>
+              {template.id === "animal" && "🎯"}
+              {template.id === "koukyuu" && <span className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">スキル</span>}
+              {template.id === "clear" && <span className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3">スキル</span>}
+              {!template.id.match(/animal|koukyuu|clear/) && "スキル"}
+              {template.id === "animal" && " 🎯"}
+            </h3>
+            <div className={`flex flex-wrap gap-2`}>
               {displaySkills.map((skill, index) => (
                 <span 
                   key={index}
                   className={styles.skillBadge}
                 >
-                  {skill.name}
+                  {template.id === "animal" && "🌱 "}{skill.name}
                 </span>
               ))}
             </div>
           </div>
 
           {/* Projects */}
-          <div className={template.id === "yuttari" ? "space-y-3" : "space-y-2"}>
-            <h3 className="text-lg font-semibold mb-2">制作物</h3>
+          <div className="space-y-3">
+            <h3 className={`text-lg font-semibold ${
+              template.id === "animal" ? "flex items-center gap-2" :
+              template.id === "koukyuu" ? "text-white text-center" :
+              template.id === "clear" ? "text-blue-900 text-center" :
+              ""
+            }`}>
+              {template.id === "animal" && "🛠️"}
+              {template.id === "koukyuu" && <span className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">制作物</span>}
+              {template.id === "clear" && <span className="bg-white/80 backdrop-blur-sm rounded-full px-6 py-3">制作物</span>}
+              {!template.id.match(/animal|koukyuu|clear/) && "制作物"}
+              {template.id === "animal" && " 🛠️"}
+            </h3>
             <div className="space-y-2">
-              {displayProjects.map((project, index) => (
-                <div key={index} className={`bg-current/10 p-3 rounded ${template.id === "koukyuu" ? "backdrop-blur-sm" : ""}`}>
-                  <h4 className="font-medium">{project.title}</h4>
-                  <p className="text-sm opacity-80">{project.description}</p>
+              {displayProjects.slice(0, 1).map((project, index) => (
+                <div key={index} className={`p-3 rounded ${
+                  template.id === "simple" ? "bg-gray-50" :
+                  template.id === "yuttari" ? "bg-white/60 rounded-2xl" :
+                  template.id === "neon" ? "bg-gray-800 border border-cyan-400" :
+                  template.id === "cool" ? "bg-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-xl" :
+                  template.id === "techblue" ? "bg-slate-800 rounded-lg border border-slate-700" :
+                  template.id === "animal" ? "bg-white/80 border-4 border-green-200 rounded-3xl relative" :
+                  "bg-current/10"
+                } relative`}>
+                  {template.id === "animal" && (
+                    <div className="absolute -top-2 -right-2"><span className="text-2xl">🎨</span></div>
+                  )}
+                  <h4 className={`font-medium ${
+                    template.id === "neon" ? "text-cyan-400" :
+                    template.id === "cool" ? "text-blue-400" :
+                    template.id === "techblue" ? "text-blue-400" :
+                    template.id === "animal" ? "text-green-900 flex items-center gap-2" :
+                    ""
+                  }`}>
+                    {template.id === "animal" && "🌟 "}{project.title}
+                  </h4>
+                  <p className={`text-sm ${
+                    template.id === "yuttari" ? "font-light" :
+                    template.id === "neon" ? "text-gray-200" :
+                    template.id === "cool" ? "text-gray-200" :
+                    template.id === "techblue" ? "text-gray-300" :
+                    template.id === "animal" ? "font-medium" :
+                    "opacity-80"
+                  }`}>
+                    {project.description}
+                  </p>
                   {project.tech && (
-                    <p className="text-xs opacity-60 mt-1">
+                    <p className={`text-xs mt-1 ${
+                      template.id === "neon" ? "text-pink-400" :
+                      template.id === "cool" ? "text-purple-400" :
+                      template.id === "techblue" ? "text-blue-400" :
+                      template.id === "animal" ? "text-green-700 font-bold" :
+                      "opacity-60"
+                    }`}>
+                      {template.id === "animal" && "🔧 "}
                       {project.tech.split(',').map(tech => tech.trim()).join(', ')}
                     </p>
                   )}

@@ -9,6 +9,8 @@ import CoolTemplate from '@/components/templates/CoolTemplate';
 import YuttariTemplate from '@/components/templates/YuttariTemplate';
 import TechBlueTemplate from '@/components/templates/TechBlueTemplate';
 import AnimalTemplate from '@/components/templates/AnimalTemplate';
+import KoukyuuTemplate from '@/components/templates/KoukyuuTemplate';
+import ClearTemplate from '@/components/templates/ClearTemplate';
 import '../globals.css';
 
 interface Skill {
@@ -97,6 +99,10 @@ function PortfolioContent() {
         return <TechBlueTemplate data={portfolioData} />;
       case 'animal':
         return <AnimalTemplate data={portfolioData} />;
+      case 'koukyuu':
+        return <KoukyuuTemplate data={portfolioData} />;
+      case 'clear':
+        return <ClearTemplate data={portfolioData} />;
       default:
         return <SimpleTemplate data={portfolioData} />;
     }
