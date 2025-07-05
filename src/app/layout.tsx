@@ -14,30 +14,39 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Autofolio - ポートフォリオ自動生成",
-  description: "簡単な入力で美しいポートフォリオサイトを自動生成。学生や開発者のための無料ツール。",
-  keywords: ["ポートフォリオ", "履歴書", "CV", "自動生成", "学生", "開発者", "就活"],
+  description:
+    "簡単な入力で美しいポートフォリオサイトを自動生成。学生や開発者のための無料ツール。",
+  keywords: [
+    "ポートフォリオ",
+    "履歴書",
+    "CV",
+    "自動生成",
+    "学生",
+    "開発者",
+    "就活",
+  ],
   authors: [{ name: "Autofolio Team" }],
   manifest: "/manifest.json",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" }
+      { url: "/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-touch-icon.svg", sizes: "180x180", type: "image/svg+xml" }
-    ]
+      { url: "/apple-touch-icon.svg", sizes: "180x180", type: "image/svg+xml" },
+    ],
   },
   openGraph: {
     title: "Autofolio - ポートフォリオ自動生成",
     description: "簡単な入力で美しいポートフォリオサイトを自動生成",
     type: "website",
-    locale: "ja_JP"
+    locale: "ja_JP",
   },
   twitter: {
     card: "summary_large_image",
     title: "Autofolio - ポートフォリオ自動生成",
-    description: "簡単な入力で美しいポートフォリオサイトを自動生成"
-  }
+    description: "簡単な入力で美しいポートフォリオサイトを自動生成",
+  },
 };
 
 export default function RootLayout({
@@ -46,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang='ja'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
