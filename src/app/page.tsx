@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import TemplatePreview from "./components/TemplatePreview";
 
 interface Skill {
   name: string;
@@ -46,6 +47,13 @@ export default function Home() {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+
+  const handleTemplateSelect = (templateId: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      template: templateId,
     }));
   };
 
@@ -446,26 +454,13 @@ export default function Home() {
 
           {/* テンプレート選択 */}
           <div>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>
+            <label className='block text-sm font-medium text-gray-700 mb-4'>
               テンプレート選択 *
             </label>
-            <select
-              name='template'
-              value={formData.template}
-              onChange={handleInputChange}
-              required
-              className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900'
-            >
-              <option value=''>--テンプレートを選択してください--</option>
-              <option value='simple'>シンプル</option>
-              <option value='yuttari'>ゆったり</option>
-              <option value='neon'>ネオン</option>
-              <option value='cool'>クール</option>
-              <option value='koukyuu'>高級</option>
-              <option value='clear'>透明感</option>
-              <option value='techblue'>テックブルー風</option>
-              <option value='animal'>animal</option>
-            </select>
+            <TemplatePreview 
+              selectedTemplate={formData.template}
+              onTemplateSelect={handleTemplateSelect}
+            />
           </div>
 
           <button
