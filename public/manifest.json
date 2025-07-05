@@ -1,0 +1,22 @@
+{
+  "name": "Autofolio - ポートフォリオ自動生成",
+  "short_name": "Autofolio",
+  "description": "簡単な入力で美しいポートフォリオサイトを自動生成",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}
