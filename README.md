@@ -6,6 +6,11 @@
 
 https://portfolio-auto-generator.vercel.app/
 
+7月に行われたMUDS学内ハッカソンで作成した「Autofolio」をブラッシュアップとしてNext.jsを使って再構築し、デプロイしたものです。
+
+元となるプロジェクトのgithubリンク
+https://github.com/furuyashikiiori/portfolio-auto
+
 ## 機能
 
 - 名前、自己紹介、スキル、制作物の入力フォーム
