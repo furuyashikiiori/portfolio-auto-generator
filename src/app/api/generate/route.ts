@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import { savePortfolio } from '@/lib/storage';
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,7 +52,8 @@ export async function POST(request: NextRequest) {
     let icon_path = null;
     const iconImage = formData.get('icon_image') as File;
     
-    if (iconImage && iconImage.name) {
+    if (iconImage && iconImage.name && process.env.NODE_ENV !== 'production') {
+      // 本番環境では画像アップロードを無効化（クラウドストレージの設定が必要）
       const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
       const fileExtension = path.extname(iconImage.name).toLowerCase();
       
@@ -62,18 +64,23 @@ export async function POST(request: NextRequest) {
         );
       }
       
-      const uniqueFilename = `${uuidv4()}${fileExtension}`;
-      const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-      
-      // アップロードディレクトリが存在しない場合は作成
-      await mkdir(uploadDir, { recursive: true });
-      
-      const filePath = path.join(uploadDir, uniqueFilename);
-      const bytes = await iconImage.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-      
-      await writeFile(filePath, buffer);
-      icon_path = `/uploads/${uniqueFilename}`;
+      try {
+        const uniqueFilename = `${uuidv4()}${fileExtension}`;
+        const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+        
+        // アップロードディレクトリが存在しない場合は作成
+        await mkdir(uploadDir, { recursive: true });
+        
+        const filePath = path.join(uploadDir, uniqueFilename);
+        const bytes = await iconImage.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        
+        await writeFile(filePath, buffer);
+        icon_path = `/uploads/${uniqueFilename}`;
+      } catch (uploadError) {
+        console.warn('Image upload failed, continuing without image:', uploadError);
+        // 画像アップロードが失敗してもエラーにしない
+      }
     }
     
     // ポートフォリオデータの構築
@@ -98,12 +105,21 @@ export async function POST(request: NextRequest) {
     // ポートフォリオIDの生成
     const portfolioId = uuidv4();
     
-    // ポートフォリオデータをJSONファイルとして保存
-    const dataDir = path.join(process.cwd(), 'data');
-    await mkdir(dataDir, { recursive: true });
+    // メモリストレージに保存（本番環境での一時的な解決策）
+    const savedData = savePortfolio(portfolioId, portfolioData);
     
-    const dataFile = path.join(dataDir, `${portfolioId}.json`);
-    await writeFile(dataFile, JSON.stringify(portfolioData, null, 2));
+    // 従来のファイル保存も維持（開発環境用）
+    if (process.env.NODE_ENV !== 'production') {
+      try {
+        const dataDir = path.join(process.cwd(), 'data');
+        await mkdir(dataDir, { recursive: true });
+        
+        const dataFile = path.join(dataDir, `${portfolioId}.json`);
+        await writeFile(dataFile, JSON.stringify(portfolioData, null, 2));
+      } catch (fileError) {
+        console.warn('File save failed, using memory storage only:', fileError);
+      }
+    }
     
     return NextResponse.json({ 
       success: true, 
@@ -113,8 +129,15 @@ export async function POST(request: NextRequest) {
     
   } catch (error) {
     console.error('Error generating portfolio:', error);
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : String(error),
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return NextResponse.json(
-      { error: 'ポートフォリオの生成に失敗しました' },
+      { 
+        error: 'ポートフォリオの生成に失敗しました',
+        details: error instanceof Error ? error.message : String(error)
+      },
       { status: 500 }
     );
   }

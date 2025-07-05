@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFile } from 'fs/promises';
 import path from 'path';
+import { getPortfolio } from '@/lib/storage';
 
 export async function GET(
   request: NextRequest,
@@ -16,20 +17,29 @@ export async function GET(
       );
     }
     
-    const dataDir = path.join(process.cwd(), 'data');
-    const dataFile = path.join(dataDir, `${id}.json`);
-    
-    try {
-      const fileContent = await readFile(dataFile, 'utf-8');
-      const portfolioData = JSON.parse(fileContent);
-      
+    // まずメモリストレージから確認
+    const portfolioData = getPortfolio(id);
+    if (portfolioData) {
       return NextResponse.json(portfolioData);
-    } catch {
-      return NextResponse.json(
-        { error: 'Portfolio not found' },
-        { status: 404 }
-      );
     }
+    
+    // フォールバック: ファイルシステムから読み取り（開発環境用）
+    if (process.env.NODE_ENV !== 'production') {
+      try {
+        const dataDir = path.join(process.cwd(), 'data');
+        const dataFile = path.join(dataDir, `${id}.json`);
+        const fileContent = await readFile(dataFile, 'utf-8');
+        const fileData = JSON.parse(fileContent);
+        return NextResponse.json(fileData);
+      } catch (fileError) {
+        // ファイル読み取り失敗は無視
+      }
+    }
+    
+    return NextResponse.json(
+      { error: 'Portfolio not found' },
+      { status: 404 }
+    );
     
   } catch (error) {
     console.error('Error fetching portfolio:', error);
