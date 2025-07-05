@@ -1,0 +1,35 @@
+{
+  "name": "古屋敷伊織",
+  "university": "武蔵野",
+  "year": "3年",
+  "graduation_year": "2027",
+  "self_intro": "Next.js",
+  "skills": [
+    {
+      "name": "Python",
+      "level": 3
+    },
+    {
+      "name": "React",
+      "level": 5
+    }
+  ],
+  "title": "React楽しい",
+  "achievements": "",
+  "certifications": "",
+  "projects": [
+    {
+      "title": "異世界レシピ",
+      "description": "レシピの自動生成",
+      "tech": [
+        "Next.js"
+      ],
+      "url": null
+    }
+  ],
+  "contact_email": "",
+  "sns_links": [],
+  "contact_github": "",
+  "icon_path": "/uploads/335a8cd5-bbda-40a2-bec9-cb46e8bcb42d.png",
+  "template": "animal"
+}
