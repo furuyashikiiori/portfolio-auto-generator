@@ -39,7 +39,7 @@ export default function TechBlueTemplate({ data }: TechBlueTemplateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-slate-900 text-white" style={{ backgroundColor: '#0f172a', color: '#ffffff' }}>
       {/* ヘッダー */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-800 py-16">
         <div className="max-w-6xl mx-auto px-8 text-center">

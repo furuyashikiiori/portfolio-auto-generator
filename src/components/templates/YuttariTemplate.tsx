@@ -39,7 +39,7 @@ export default function YuttariTemplate({ data }: YuttariTemplateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-12" style={{ background: 'linear-gradient(to bottom right, #fffbeb, #fff7ed, #fef2f2)', color: '#92400e' }}>
       <div className="max-w-5xl mx-auto p-10">
         {/* ヘッダー */}
         <div className="text-center mb-20">

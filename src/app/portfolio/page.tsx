@@ -8,6 +8,8 @@ import NeonTemplate from '@/components/templates/NeonTemplate';
 import CoolTemplate from '@/components/templates/CoolTemplate';
 import YuttariTemplate from '@/components/templates/YuttariTemplate';
 import TechBlueTemplate from '@/components/templates/TechBlueTemplate';
+import AnimalTemplate from '@/components/templates/AnimalTemplate';
+import '../globals.css';
 
 interface Skill {
   name: string;
@@ -93,6 +95,8 @@ function PortfolioContent() {
         return <YuttariTemplate data={portfolioData} />;
       case 'techblue':
         return <TechBlueTemplate data={portfolioData} />;
+      case 'animal':
+        return <AnimalTemplate data={portfolioData} />;
       default:
         return <SimpleTemplate data={portfolioData} />;
     }

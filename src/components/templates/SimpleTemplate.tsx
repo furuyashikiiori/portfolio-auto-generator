@@ -39,7 +39,7 @@ export default function SimpleTemplate({ data }: SimpleTemplateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white py-8">
+    <div className="min-h-screen bg-white py-8" style={{ backgroundColor: '#ffffff', color: '#111827' }}>
       <div className="max-w-4xl mx-auto p-8 bg-white border border-gray-200 rounded-lg shadow-sm">
         {/* ヘッダー */}
         <div className="text-center mb-12">

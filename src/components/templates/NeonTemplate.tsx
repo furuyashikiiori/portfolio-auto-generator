@@ -39,7 +39,7 @@ export default function NeonTemplate({ data }: NeonTemplateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-black py-8">
+    <div className="min-h-screen bg-black py-8" style={{ backgroundColor: '#000000', color: '#ffffff' }}>
       <div className="max-w-4xl mx-auto p-8 bg-gray-900 border-2 border-cyan-400 rounded-lg shadow-2xl shadow-cyan-400/20">
         {/* ヘッダー */}
         <div className="text-center mb-12">

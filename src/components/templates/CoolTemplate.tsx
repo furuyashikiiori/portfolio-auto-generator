@@ -39,7 +39,7 @@ export default function CoolTemplate({ data }: CoolTemplateProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black py-8" style={{ background: 'linear-gradient(to bottom right, #0f172a, #111827, #000000)', color: '#ffffff' }}>
       <div className="max-w-4xl mx-auto p-8">
         {/* ヘッダー */}
         <div className="text-center mb-16 relative">

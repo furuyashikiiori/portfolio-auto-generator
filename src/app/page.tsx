@@ -460,6 +460,10 @@ export default function Home() {
             <TemplatePreview 
               selectedTemplate={formData.template}
               onTemplateSelect={handleTemplateSelect}
+              formData={formData}
+              skills={skills}
+              projects={projects}
+              iconImage={iconImage}
             />
           </div>
 
