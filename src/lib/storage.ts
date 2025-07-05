@@ -29,13 +29,16 @@ interface PortfolioData {
 // メモリ内ストレージ（本番環境では永続化されない）
 const portfolioStorage = new Map<string, PortfolioData>();
 
-export function savePortfolio(id: string, data: Omit<PortfolioData, 'id' | 'created_at'>): PortfolioData {
+export function savePortfolio(
+  id: string,
+  data: Omit<PortfolioData, "id" | "created_at">
+): PortfolioData {
   const portfolioData: PortfolioData = {
     ...data,
     id,
     created_at: new Date().toISOString(),
   };
-  
+
   portfolioStorage.set(id, portfolioData);
   return portfolioData;
 }

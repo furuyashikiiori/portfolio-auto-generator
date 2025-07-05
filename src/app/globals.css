@@ -26,10 +26,13 @@ body {
 }
 
 /* フォーム要素のテキスト色を明示的に設定 */
-input, textarea, select {
+input,
+textarea,
+select {
   color: #111827 !important;
 }
 
-input::placeholder, textarea::placeholder {
-  color: #9CA3AF !important;
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
 }
